@@ -1,0 +1,23 @@
+<div class="sidebar" [ngClass]="collapsed ? 'sidenav-collapsed':''">
+<!--  si la valeur de collapsed est vraie  sidebar prend la proprieté   sidenav-collapsed si non rien-->
+  <div class="logo-container mb-4">
+    <button class="logo" (click)="togglecolapse()">A</button>
+    <div class="logo-text" *ngIf="collapsed"> Angular</div>
+    <button class="btn-close" *ngIf="collapsed" (click)="closeSidebar()">
+<!--      <i class="fa   fa-close"></i>-->
+    </button>
+
+  </div>
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item mb-4 mt-4" *ngFor="let data of navData">
+      <a class="sidenav-nav-link">
+        <i class="sidenav-link-icon " [class]="data.icon"></i>
+        <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+      </a>
+    </li>
+  </ul>
+  <i  class="fa fa-camera"></i>
+
+</div>
+
+
